@@ -1,0 +1,17 @@
+# never upload secrets
+*.env
+.env
+*.key
+*.pem
+*.p12
+*.cert
+*.crt
+
+# system files
+.DS_Store
+Thumbs.db
+
+# node / python / build stuff (if you ever use them)
+node_modules/
+dist/
+__pycache__/
