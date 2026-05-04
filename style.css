@@ -27,3 +27,8 @@ p {
     color: #cccccc;
     text-align: center;
 }
+
+.small {
+    font-size: 0.5rem;
+    color: #8b8b8b;
+}
