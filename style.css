@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Bitcount';
+  src: url('assets/fonts/Bitcount.ttf') format('truetype');
+  font-weight: normal; /* Change to '100 900' if it is a variable font */
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +13,7 @@
 }
 
 body {
+    font-family: "Bitcount";
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -15,14 +24,12 @@ body {
 }
 
 h1 {
-    font-family: 'Times New Roman', Times, serif;
     font-size: 3rem;
     margin-bottom: 0.5rem;
     text-align: center;
 }
 
 p {
-    font-family: 'Times New Roman', Times, serif;
     font-size: 2.5rem;
     color: #cccccc;
     text-align: center;
@@ -31,9 +38,4 @@ p {
 .small {
     font-size: 1.5rem;
     color: #8b8b8b;
-}
-
-.red {
-    color:#ffffff;
-    -webkit-text-stroke: 0.05rem #c00000;
 }
