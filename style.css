@@ -1,9 +1,10 @@
 @font-face {
-  font-family: 'Bitcount';
-  src: url('assets/fonts/Bitcount.ttf') format('truetype');
-  font-weight: normal; /* Change to '100 900' if it is a variable font */
-  font-style: normal;
-  font-display: swap;
+    font-family: 'Bitcount';
+    src: url('assets/fonts/Bitcount.ttf') format('truetype');
+    font-weight: normal;
+    /* Change to '100 900' if it is a variable font */
+    font-style: normal;
+    font-display: swap;
 }
 
 * {
@@ -19,23 +20,32 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(0deg, #000000, #550000, #000000);
+    background: linear-gradient(0deg, #000000, #6e0505, #000000);
     color: white;
 }
 
 h1 {
     font-size: 3rem;
+    font-weight: 100;
     margin-bottom: 0.5rem;
     text-align: center;
+    text-shadow: 2px 2.5px #ff5c5c;
 }
 
 p {
     font-size: 2.5rem;
     color: #cccccc;
     text-align: center;
+    text-shadow: 2px 2.5px #000000;
+}
+
+a {
+    text-decoration: none !important;
+    border: none !important;
 }
 
 .small {
     font-size: 1.5rem;
     color: #8b8b8b;
+    text-shadow: 2px 2.5px #000000;
 }
