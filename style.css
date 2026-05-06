@@ -10,7 +10,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #000000, #550000);
+    background: linear-gradient(0deg, #000000, #550000, #000000);
     color: white;
 }
 
@@ -23,12 +23,17 @@ h1 {
 
 p {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 1.2rem;
+    font-size: 2.5rem;
     color: #cccccc;
     text-align: center;
 }
 
 .small {
-    font-size: 0.5rem;
+    font-size: 1.5rem;
     color: #8b8b8b;
+}
+
+.red {
+    color:#ffffff;
+    -webkit-text-stroke: 0.05rem #c00000;
 }
