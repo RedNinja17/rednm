@@ -19,8 +19,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background: linear-gradient(0deg, #000000, #6e0505, #000000);
+    align-items: left;
+    margin-left: 15rem;
+    background: radial-gradient(ellipse at left center, #6e0505 0%, #000000 100%);
     color: white;
 }
 
@@ -28,18 +29,18 @@ h1 {
     font-size: 3rem;
     font-weight: 100;
     margin-bottom: 0.5rem;
-    text-align: center;
+    text-align: left;
     text-shadow: 2px 2.5px #ff5c5c;
 }
 
 p {
     font-size: 2.5rem;
     color: #cccccc;
-    text-align: center;
+    text-align: left;
     text-shadow: 2px 2.5px #000000;
 }
 
-a {
+a, a:visited, a:hover, a:active {
     text-decoration: none !important;
     border: none !important;
 }
