@@ -1,6 +1,55 @@
 window.addEventListener("load", () => {
     initVirtualScroll();
+    initCollageLayouts();
 });
+function initCollageLayouts() {
+    const collages = document.querySelectorAll(".project-collage");
+
+    collages.forEach(collage => {
+        const imgs = Array.from(collage.querySelectorAll("img"));
+        imgs.forEach(img => img.classList.remove("span-2x2", "span-2x1", "span-1x2"));
+        collage.classList.remove("single-item");
+
+        const count = imgs.length;
+
+        if (count === 1) {
+            collage.classList.add("single-item");
+            collage.style.gridTemplateColumns = "1fr";
+            collage.style.gridTemplateRows = "1fr";
+        }
+        else if (count === 2) {
+            collage.style.gridTemplateColumns = "1fr 1fr";
+            collage.style.gridTemplateRows = "1fr";
+        }
+        else if (count === 3) {
+            collage.style.gridTemplateColumns = "2fr 1fr";
+            collage.style.gridTemplateRows = "1fr 1fr";
+            if (imgs[0]) imgs[0].classList.add("span-1x2");
+        }
+        else if (count === 4) {
+            collage.style.gridTemplateColumns = "2fr 1fr 1fr";
+            collage.style.gridTemplateRows = "1fr 1fr";
+            if (imgs[0]) imgs[0].classList.add("span-1x2");
+        }
+        else if (count === 5) {
+            collage.style.gridTemplateColumns = "repeat(3, 1fr)";
+            collage.style.gridTemplateRows = "1fr 1fr";
+            if (imgs[0]) imgs[0].classList.add("span-2x1");
+        }
+        else if (count === 6) {
+            collage.style.gridTemplateColumns = "repeat(3, 1fr)";
+            collage.style.gridTemplateRows = "1fr 1fr";
+        }
+        else {
+            collage.style.gridTemplateColumns = "repeat(5, 1fr)";
+            collage.style.gridTemplateRows = "repeat(3, 1fr)";
+
+            if (imgs[0]) imgs[0].classList.add("span-1x2");
+            if (imgs[2]) imgs[2].classList.add("span-2x2");
+            if (imgs[3]) imgs[3].classList.add("span-1x2");
+        }
+    });
+}
 
 function initVirtualScroll() {
     const scrollArea = document.querySelector(".project-scroll");
@@ -41,7 +90,7 @@ function initVirtualScroll() {
 
             const absDiff = Math.abs(diff);
 
-            const targetY = diff * 550;
+            const targetY = diff * 700;
             panel.style.transform = `translateY(${targetY}px)`;
 
             if (absDiff < 0.5) {
@@ -54,7 +103,7 @@ function initVirtualScroll() {
         });
 
         const radiusX = 45;
-        const radiusY = 175;
+        const radiusY = 240;
         const angleStep = 26;
         const totalIcons = projectCount * 3;
         const centerProgressIndex = projectCount + (currentIndex % projectCount);
@@ -123,7 +172,7 @@ function initVirtualScroll() {
     }, { passive: false });
 
     scrollArea.addEventListener("pointerdown", (e) => {
-        if (e.target.closest(".project-link")) return;
+        if (e.target.closest(".project-link") || e.target.closest(".project-collage")) return;
         isDragging = true;
         startY = e.clientY;
         scrollArea.setPointerCapture(e.pointerId);
