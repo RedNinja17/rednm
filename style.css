@@ -2,7 +2,6 @@
     font-family: 'Bitcount';
     src: url('assets/fonts/Bitcount.ttf') format('truetype');
     font-weight: normal;
-    /* Change to '100 900' if it is a variable font */
     font-style: normal;
     font-display: swap;
 }
@@ -16,19 +15,21 @@
 body {
     font-family: "Bitcount";
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: left;
-    margin-left: 15rem;
     background: radial-gradient(ellipse at left center, #6e0505 0%, #000000 100%);
     color: white;
+    padding: 40px 0;
+}
+
+body>h1,
+body>p,
+body>a.small {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
 }
 
 h1 {
     font-size: 3rem;
     font-weight: 100;
-    margin-bottom: 0.5rem;
     text-align: left;
     text-shadow: 2px 2.5px #ff5c5c;
 }
@@ -55,127 +56,158 @@ a:active {
 }
 
 .project-viewer {
-    width: 85%;
-    margin: 40px auto;
+    width: 85vw;
+    max-width: 1300px;
     height: 550px;
-    border-radius: 25px;
-    padding: 20px;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1200px;
-
-    /* TRUE glassmorphism */
+    margin-top: 40px;
+    border-radius: 30px;
+    padding: 30px;
     background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(30px) saturate(180%);
-    -webkit-backdrop-filter: blur(30px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-
-    /* Soft shadow */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-
+    backdrop-filter: blur(40px) saturate(150%);
+    -webkit-backdrop-filter: blur(40px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.3),
+        0 4px 30px rgba(0, 0, 0, 0.4),
+        0 15px 50px rgba(0, 0, 0, 0.3);
     display: flex;
-    gap: 20px;
+    gap: 30px;
+    overflow: hidden;
 }
-
 
 .project-scroll {
     flex: 1;
     height: 100%;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    padding-right: 10px;
+    position: relative;
     background: transparent;
-    scrollbar-width: none;
+    user-select: none;
+    cursor: grab;
 }
 
-.project-scroll::-webkit-scrollbar {
-    display: none;
+.project-scroll:active {
+    cursor: grabbing;
 }
 
 .project-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 15px;
+    gap: 20px;
+    pointer-events: none;
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+.project-panel.active-panel {
+    pointer-events: auto;
 }
 
 .project-header {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
+}
+
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+.project-title {
+    font-size: 3.2rem;
+    font-weight: 400;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.project-link:hover .project-title {
+    color: #ff5c5c;
+    transform: translateX(4px);
+}
+
+.project-description {
+    font-size: 1.8rem;
+    line-height: 1.4;
+    color: #dddddd;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
 }
 
 .project-status {
-    width: 20px;
-    height: 20px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.2);
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px) saturate(150%);
+    -webkit-backdrop-filter: blur(15px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.4),
+        0 2px 8px rgba(0, 0, 0, 0.4);
+    flex-shrink: 0;
 }
 
 .status-not-started {
-    background: rgba(0, 0, 0, 0.4);
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), 0 0 12px rgba(255, 255, 255, 0.1);
 }
 
 .status-working {
-    background: rgba(255, 255, 0, 0.4);
-    box-shadow: 0 0 12px rgba(255, 255, 0, 0.7);
+    background: rgba(255, 200, 0, 0.25);
+    border-color: rgba(255, 200, 0, 0.6);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3), 0 0 12px rgba(255, 200, 0, 0.3);
 }
 
 .status-done {
-    background: rgba(0, 255, 0, 0.4);
-    box-shadow: 0 0 12px rgba(0, 255, 0, 0.7);
+    background: rgba(0, 255, 130, 0.25);
+    border-color: rgba(0, 255, 130, 0.6);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3), 0 0 12px rgba(0, 255, 130, 0.3);
 }
 
 .project-icons {
-    width: 80px;
-    background: transparent;
-    overflow: hidden;
     position: relative;
+    width: 160px;
+    height: 100%;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .icon-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 10px 0;
-    transition: transform 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .icon {
-    width: 40px;
-    height: 40px;
-    opacity: 0.3;
-    transition: opacity 0.2s, transform 0.2s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.4);
+    opacity: 0;
+    user-select: none;
+    cursor: pointer;
+    will-change: transform, opacity;
 }
 
 .icon.active {
-    opacity: 1;
-    transform: scale(1.2);
-}
-
-.project-icons::before,
-.project-icons::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    pointer-events: none;
-}
-
-.project-icons::before {
-    top: 0;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.1), transparent);
-}
-
-.project-icons::after {
-    bottom: 0;
-    background: linear-gradient(to top, rgba(255,255,255,0.1), transparent);
+    color: #ff5c5c;
+    text-shadow: 0 0 15px rgba(255, 92, 92, 0.6);
+    transition: color 0.2s ease, text-shadow 0.2s ease;
 }
