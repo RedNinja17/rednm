@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project A</title>
+    <link rel="stylesheet" href="projectpages.css" />
+</head>
+
+<body>
+    <div class="header-mask"></div>
+    <a href="index.html" class="back-dashboard">Return to Dashboard</a>
+
+    <div class="content-container">
+        <div class="project-header-main">
+            <span class="project-status status-done">Completed</span>
+            <div class="project-title-group">
+                <h1 class="project-main-title">Project A</h1>
+                <p class="project-description">This is a temporary description.</p>
+            </div>
+        </div>
+
+        <div class="section" id="sec-planning" data-label="Planning">
+            <h2>Planning Stage</h2>
+            <p>This is a temporary description.</p>
+            <img src="assets/photos/temp.png" alt="Planning Showcase" />
+        </div>
+
+        <div class="section" id="sec-development" data-label="Development">
+            <h2>Core Development</h2>
+            <p>This is a temporary description.</p>
+            <img src="assets/photos/temp.png" alt="Development Showcase" />
+        </div>
+
+        <div class="section" id="sec-testing" data-label="Testing">
+            <h2>Testing</h2>
+            <p>This is a temporary description.</p>
+            <img src="assets/photos/temp.png" alt="Testing Showcase" />
+        </div>
+
+        <div class="section" id="sec-deployment" data-label="Deployment">
+            <h2>Final Deployment</h2>
+            <p>This is a temporary description.</p>
+            <img src="assets/photos/temp.png" alt="Deployment Showcase" />
+        </div>
+    </div>
+
+    <div class="timeline-container">
+        <div class="timeline-wrapper" id="timelineWrapper">
+            <div class="timeline-line"></div>
+            <div class="timeline-progress" id="timelineProgress"></div>
+            <div class="timeline-nodes">
+                <div class="node" data-target="sec-planning">
+                    <div class="node-date">Jan 26, 25</div>
+                </div>
+                <div class="node" data-target="sec-development">
+                    <div class="node-date">Feb 14, 25</div>
+                </div>
+                <div class="node" data-target="sec-testing">
+                    <div class="node-date">Mar 03, 25</div>
+                </div>
+                <div class="node" data-target="sec-deployment">
+                    <div class="node-date">Apr 20, 25</div>
+                </div>
+            </div>
+            <div class="timeline-hover-label" id="timelineHoverLabel"></div>
+        </div>
+    </div>
+
+    <script src="projectpages.js"></script>
+</body>
+
+</html>
