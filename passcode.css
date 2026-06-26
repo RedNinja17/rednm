@@ -6,6 +6,10 @@
     font-display: swap;
 }
 
+html {
+    overscroll-behavior: none;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -23,6 +27,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 30px;
+    overscroll-behavior: none;
 }
 
 .auth-card {
@@ -53,7 +58,6 @@ p {
     letter-spacing: 0.3px;
 }
 
-/* Pin Code Concealed Display Slots */
 .pin-display {
     display: flex;
     justify-content: center;
@@ -86,7 +90,6 @@ p {
     box-shadow: 0 0 12px rgba(255, 92, 92, 0.6);
 }
 
-/* Grid Layout for Numpad Keys */
 .pin-pad {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

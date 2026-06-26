@@ -41,7 +41,6 @@
     <script>
         let currentPin = "";
         const dots = document.querySelectorAll(".pin-dot");
-        const targetHash = "4a86b3e1208945cf4f9db5dfbc667ec0734f66d4f6c4ffcc7b590e8f000b5ca2";
 
         function pressKey(num) {
             if (currentPin.length < 4) {
@@ -75,6 +74,7 @@
 
         async function submitPin() {
             const inputHash = await hashPin(currentPin);
+            const targetHash = await hashPin("2009");
 
             if (inputHash === targetHash) {
                 window.location.href = "home.html";
@@ -86,6 +86,16 @@
                 }, 600);
             }
         }
+
+        window.addEventListener("keydown", (e) => {
+            if (e.key >= "0" && e.key <= "9") {
+                pressKey(e.key);
+            } else if (e.key === "Enter") {
+                submitPin();
+            } else if (e.key === "Backspace" || e.key === "Escape") {
+                clearPin();
+            }
+        });
     </script>
 </body>
 
