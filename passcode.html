@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Passcode</title>
+    <link rel="stylesheet" href="passcode.css" />
+</head>
+
+<body>
+    <div class="auth-card">
+        <h1>Home Page</h1>
+        <p>Enter the security credentials to gain access.</p>
+
+        <div class="pin-display">
+            <div class="pin-dot"></div>
+            <div class="pin-dot"></div>
+            <div class="pin-dot"></div>
+            <div class="pin-dot"></div>
+        </div>
+
+        <div class="pin-pad">
+            <button class="pad-btn" onclick="pressKey('1')">1</button>
+            <button class="pad-btn" onclick="pressKey('2')">2</button>
+            <button class="pad-btn" onclick="pressKey('3')">3</button>
+            <button class="pad-btn" onclick="pressKey('4')">4</button>
+            <button class="pad-btn" onclick="pressKey('5')">5</button>
+            <button class="pad-btn" onclick="pressKey('6')">6</button>
+            <button class="pad-btn" onclick="pressKey('7')">7</button>
+            <button class="pad-btn" onclick="pressKey('8')">8</button>
+            <button class="pad-btn" onclick="pressKey('9')">9</button>
+            <button class="pad-btn btn-clear" onclick="clearPin()">Clear</button>
+            <button class="pad-btn" onclick="pressKey('0')">0</button>
+            <button class="pad-btn btn-enter" onclick="submitPin()">Enter</button>
+        </div>
+
+        <a href="index.html" class="back-btn">Return to Dashboard</a>
+    </div>
+
+    <script>
+        let currentPin = "";
+        const dots = document.querySelectorAll(".pin-dot");
+        const targetHash = "4a86b3e1208945cf4f9db5dfbc667ec0734f66d4f6c4ffcc7b590e8f000b5ca2";
+
+        function pressKey(num) {
+            if (currentPin.length < 4) {
+                currentPin += num;
+                updateDisplay();
+            }
+        }
+
+        function clearPin() {
+            currentPin = "";
+            updateDisplay();
+            document.querySelector(".pin-display").classList.remove("error");
+        }
+
+        function updateDisplay() {
+            dots.forEach((dot, index) => {
+                if (index < currentPin.length) {
+                    dot.classList.add("filled");
+                } else {
+                    dot.classList.remove("filled");
+                }
+            });
+        }
+
+        async function hashPin(string) {
+            const utf8 = new TextEncoder().encode(string);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        async function submitPin() {
+            const inputHash = await hashPin(currentPin);
+
+            if (inputHash === targetHash) {
+                window.location.href = "home.html";
+            } else {
+                const display = document.querySelector(".pin-display");
+                display.classList.add("error");
+                setTimeout(() => {
+                    clearPin();
+                }, 600);
+            }
+        }
+    </script>
+</body>
+
+</html>

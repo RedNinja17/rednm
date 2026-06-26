@@ -1,232 +1,219 @@
-<!-- git add .
- git commit -m "whatever"
- git push or git push -u origin main --force if it breaks twin
- -->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico">
-  <title>Red</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico" />
+  <title>Portfolio | Nicholas Maryniy</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <h1>Redninjanm17's WIP website</h1>
-  <p>Will work on it soon...</p>
-  <a href="credits.html" class="small">maybe</a>
+  <header class="portfolio-hero">
+    <h1 class="glitch-title">Nicholas Maryniy</h1>
+    <p class="subtitle">Engineering | Energy Systems & Mechanical<br />Programmer | Lua, Java, & C++</p>
+    <a href="projects.html" class="cta-link">Explore Projects</a>
+  </header>
 
-  <section class="project-viewer">
-
-    <div class="project-scroll">
-
-      <div class="project-panel">
-        <div class="project-header">
-          <div class="header-main">
-            <span class="project-status status-done"></span>
-            <a href="projectA.html" class="project-link">
-              <h2 class="project-title">Project A<span class="title-arrow"><img src="assets/photos/arrow.svg"
-                    alt="Arrow"><img src="assets/photos/arrow.svg" alt="Arrow"></span></h2>
-            </a>
+  <main>
+    <section class="project-viewer">
+      <div class="project-scroll">
+        <div class="project-panel active-panel">
+          <div class="project-header">
+            <div class="header-main">
+              <span class="project-status status-done"></span>
+              <a href="projectA.html" class="project-link">
+                <h2 class="project-title">Project A<span class="title-arrow"><img src="assets/photos/arrow.svg"
+                      alt="Arrow" /><img src="assets/photos/arrow.svg" alt="Arrow" /></span></h2>
+              </a>
+            </div>
+            <div class="divider-v"></div>
+            <div class="project-meta-info">
+              <div class="meta-item">
+                <span class="meta-icon">$</span>
+                <span class="meta-bubble">Free</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon"><img src="assets/photos/calendar.svg" alt="Calendar Icon" /></span>
+                <span class="meta-bubble">Jan 2026</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon"><img src="assets/photos/tool.svg" alt="Tool Icon" /></span>
+                <span class="meta-bubble">C++</span>
+              </div>
+            </div>
           </div>
-          <div class="divider-v"></div>
-          <div class="project-meta-info">
-            <div class="meta-item">
-              <span class="meta-icon">$</span>
-              <span class="meta-bubble">Free</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-icon">
-                <img src="assets/photos/calendar.svg" alt="Calendar Icon">
-              </span>
-              <span class="meta-bubble">Jan 2026</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-icon">
-                <img src="assets/photos/tool.svg" alt="Tool Icon">
-              </span>
-              <span class="meta-bubble">C++</span>
-            </div>
+          <p class="project-description">This is an example of a description.</p>
+          <div class="divider-h"></div>
+          <div class="project-collage">
+            <img src="assets/photos/temp.png" alt="Project Showcase" />
           </div>
         </div>
-        <p class="project-description">Description for project A.</p>
-        <div class="divider-h"></div>
-        <div class="project-collage">
-          <img src="assets/photos/temp.png" alt="Project Showcase">
+
+        <div class="project-panel">
+          <div class="project-header">
+            <div class="header-main">
+              <span class="project-status status-working"></span>
+              <a href="projectB.html" class="project-link">
+                <h2 class="project-title">Project B<span class="title-arrow"><img src="assets/photos/arrow.svg"
+                      alt="Arrow" /><img src="assets/photos/arrow.svg" alt="Arrow" /></span></h2>
+              </a>
+            </div>
+            <div class="divider-v"></div>
+            <div class="project-meta-info">
+              <div class="meta-item">
+                <span class="meta-icon">$</span>
+                <span class="meta-bubble">$15.00</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon"><img src="assets/photos/calendar.svg" alt="Calendar Icon" /></span>
+                <span class="meta-bubble">Jan 2026</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon"><img src="assets/photos/tool.svg" alt="Tool Icon" /></span>
+                <span class="meta-bubble">Fusion 360</span>
+              </div>
+            </div>
+          </div>
+          <p class="project-description">This is an example of a description.</p>
+          <div class="divider-h"></div>
+          <div class="project-collage">
+            <img src="assets/photos/temp.png" alt="Showcase 1" />
+            <img src="assets/photos/temp.png" alt="Showcase 2" />
+          </div>
+        </div>
+
+        <div class="project-panel">
+          <div class="project-header">
+            <div class="header-main">
+              <span class="project-status status-not-started"></span>
+              <a href="projectC.html" class="project-link">
+                <h2 class="project-title">Project C<span class="title-arrow"><img src="assets/photos/arrow.svg"
+                      alt="Arrow" /><img src="assets/photos/arrow.svg" alt="Arrow" /></span></h2>
+              </a>
+            </div>
+            <div class="divider-v"></div>
+            <div class="project-meta-info">
+              <div class="meta-item">
+                <span class="meta-icon">$</span>
+                <span class="meta-bubble">TBD</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon"><img src="assets/photos/calendar.svg" alt="Calendar Icon" /></span>
+                <span class="meta-bubble">Jan 2026</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon"><img src="assets/photos/tool.svg" alt="Tool Icon" /></span>
+                <span class="meta-bubble">HTML / CSS</span>
+              </div>
+            </div>
+          </div>
+          <p class="project-description">This is an example of a description.</p>
+          <div class="divider-h"></div>
+          <div class="project-collage">
+            <img src="assets/photos/temp.png" alt="Showcase 1" />
+            <img src="assets/photos/temp.png" alt="Showcase 2" />
+            <img src="assets/photos/temp.png" alt="Showcase 3" />
+            <img src="assets/photos/temp.png" alt="Showcase 4" />
+          </div>
+        </div>
+
+        <div class="project-panel">
+          <div class="project-header">
+            <div class="header-main">
+              <span class="project-status status-not-started"></span>
+              <a href="projectD.html" class="project-link">
+                <h2 class="project-title">Project D<span class="title-arrow"><img src="assets/photos/arrow.svg"
+                      alt="Arrow" /><img src="assets/photos/arrow.svg" alt="Arrow" /></span></h2>
+              </a>
+            </div>
+            <div class="divider-v"></div>
+            <div class="project-meta-info">
+              <div class="meta-item">
+                <span class="meta-icon">$</span>
+                <span class="meta-bubble">Free</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon"><img src="assets/photos/calendar.svg" alt="Calendar Icon" /></span>
+                <span class="meta-bubble">Jan 2026</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon"><img src="assets/photos/tool.svg" alt="Tool Icon" /></span>
+                <span class="meta-bubble">Python</span>
+              </div>
+            </div>
+          </div>
+          <p class="project-description">This is an example of a description.</p>
+          <div class="divider-h"></div>
+          <div class="project-collage">
+            <img src="assets/photos/temp.png" alt="Showcase 1" />
+            <img src="assets/photos/temp.png" alt="Showcase 2" />
+            <img src="assets/photos/temp.png" alt="Showcase 3" />
+            <img src="assets/photos/temp.png" alt="Showcase 4" />
+            <img src="assets/photos/temp.png" alt="Showcase 5" />
+            <img src="assets/photos/temp.png" alt="Showcase 6" />
+          </div>
+        </div>
+
+        <div class="project-panel">
+          <div class="project-header">
+            <div class="header-main">
+              <span class="project-status status-not-started"></span>
+              <a href="projectE.html" class="project-link">
+                <h2 class="project-title">Project E<span class="title-arrow"><img src="assets/photos/arrow.svg"
+                      alt="Arrow" /><img src="assets/photos/arrow.svg" alt="Arrow" /></span></h2>
+              </a>
+            </div>
+            <div class="divider-v"></div>
+            <div class="project-meta-info">
+              <div class="meta-item">
+                <span class="meta-icon">$</span>
+                <span class="meta-bubble">TBD</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon"><img src="assets/photos/calendar.svg" alt="Calendar Icon" /></span>
+                <span class="meta-bubble">Jan 2026</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon"><img src="assets/photos/tool.svg" alt="Tool Icon" /></span>
+                <span class="meta-bubble">Unity</span>
+              </div>
+            </div>
+          </div>
+          <p class="project-description">This is an example of a description.</p>
+          <div class="divider-h"></div>
+          <div class="project-collage">
+            <img src="assets/photos/temp.png" alt="Showcase 1" />
+            <img src="assets/photos/temp.png" alt="Showcase 2" />
+            <img src="assets/photos/temp.png" alt="Showcase 3" />
+            <img src="assets/photos/temp.png" alt="Showcase 4" />
+            <img src="assets/photos/temp.png" alt="Showcase 5" />
+            <img src="assets/photos/temp.png" alt="Showcase 6" />
+            <img src="assets/photos/temp.png" alt="Showcase 7" />
+            <img src="assets/photos/temp.png" alt="Showcase 8" />
+            <img src="assets/photos/temp.png" alt="Showcase 9" />
+          </div>
         </div>
       </div>
 
-      <div class="project-panel">
-        <div class="project-header">
-          <div class="header-main">
-            <span class="project-status status-working"></span>
-            <a href="projectB.html" class="project-link">
-              <h2 class="project-title">Project B<span class="title-arrow"><img src="assets/photos/arrow.svg"
-                    alt="Arrow"><img src="assets/photos/arrow.svg" alt="Arrow"></span></h2>
-            </a>
-          </div>
-          <div class="divider-v"></div>
-          <div class="project-meta-info">
-            <div class="meta-item">
-              <span class="meta-icon">$</span>
-              <span class="meta-bubble">$15.00</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-icon">
-                <img src="assets/photos/calendar.svg" alt="Calendar Icon">
-              </span>
-              <span class="meta-bubble">Jan 2026</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-icon">
-                <img src="assets/photos/tool.svg" alt="Tool Icon">
-              </span>
-              <span class="meta-bubble">Fusion 360</span>
-            </div>
-          </div>
-        </div>
-        <p class="project-description">Description for project B.</p>
-        <div class="divider-h"></div>
-        <div class="project-collage">
-          <img src="assets/photos/temp.png" alt="Showcase 1">
-          <img src="assets/photos/temp.png" alt="Showcase 2">
-        </div>
+      <div class="project-icons">
+        <div class="icon-list"></div>
       </div>
+    </section>
+  </main>
 
-      <div class="project-panel">
-        <div class="project-header">
-          <div class="header-main">
-            <span class="project-status status-not-started"></span>
-            <a href="projectC.html" class="project-link">
-              <h2 class="project-title">Project C<span class="title-arrow"><img src="assets/photos/arrow.svg"
-                    alt="Arrow"><img src="assets/photos/arrow.svg" alt="Arrow"></span></h2>
-            </a>
-          </div>
-          <div class="divider-v"></div>
-          <div class="project-meta-info">
-            <div class="meta-item">
-              <span class="meta-icon">$</span>
-              <span class="meta-bubble">TBD</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-icon">
-                <img src="assets/photos/calendar.svg" alt="Calendar Icon">
-              </span>
-              <span class="meta-bubble">Jan 2026</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-icon">
-                <img src="assets/photos/tool.svg" alt="Tool Icon">
-              </span>
-              <span class="meta-bubble">HTML / CSS</span>
-            </div>
-          </div>
-        </div>
-        <p class="project-description">Description for project C.</p>
-        <div class="divider-h"></div>
-        <div class="project-collage">
-          <img src="assets/photos/temp.png" alt="Showcase 1">
-          <img src="assets/photos/temp.png" alt="Showcase 2">
-          <img src="assets/photos/temp.png" alt="Showcase 3">
-          <img src="assets/photos/temp.png" alt="Showcase 4">
-        </div>
-      </div>
-
-      <div class="project-panel">
-        <div class="project-header">
-          <div class="header-main">
-            <span class="project-status status-not-started"></span>
-            <a href="projectD.html" class="project-link">
-              <h2 class="project-title">Project D<span class="title-arrow"><img src="assets/photos/arrow.svg"
-                    alt="Arrow"><img src="assets/photos/arrow.svg" alt="Arrow"></span></h2>
-            </a>
-          </div>
-          <div class="divider-v"></div>
-          <div class="project-meta-info">
-            <div class="meta-item">
-              <span class="meta-icon">$</span>
-              <span class="meta-bubble">Free</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-icon">
-                <img src="assets/photos/calendar.svg" alt="Calendar Icon">
-              </span>
-              <span class="meta-bubble">Jan 2026</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-icon">
-                <img src="assets/photos/tool.svg" alt="Tool Icon">
-              </span>
-              <span class="meta-bubble">Python</span>
-            </div>
-          </div>
-        </div>
-        <p class="project-description">Description for project D.</p>
-        <div class="divider-h"></div>
-        <div class="project-collage">
-          <img src="assets/photos/temp.png" alt="Showcase 1">
-          <img src="assets/photos/temp.png" alt="Showcase 2">
-          <img src="assets/photos/temp.png" alt="Showcase 3">
-          <img src="assets/photos/temp.png" alt="Showcase 4">
-          <img src="assets/photos/temp.png" alt="Showcase 5">
-          <img src="assets/photos/temp.png" alt="Showcase 6">
-        </div>
-      </div>
-
-      <div class="project-panel">
-        <div class="project-header">
-          <div class="header-main">
-            <span class="project-status status-not-started"></span>
-            <a href="projectE.html" class="project-link">
-              <h2 class="project-title">Project E<span class="title-arrow"><img src="assets/photos/arrow.svg"
-                    alt="Arrow"><img src="assets/photos/arrow.svg" alt="Arrow"></span></h2>
-            </a>
-          </div>
-          <div class="divider-v"></div>
-          <div class="project-meta-info">
-            <div class="meta-item">
-              <span class="meta-icon">$</span>
-              <span class="meta-bubble">TBD</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-icon">
-                <img src="assets/photos/calendar.svg" alt="Calendar Icon">
-              </span>
-              <span class="meta-bubble">Jan 2026</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-icon">
-                <img src="assets/photos/tool.svg" alt="Tool Icon">
-              </span>
-              <span class="meta-bubble">Unity</span>
-            </div>
-          </div>
-        </div>
-        <p class="project-description">Description for project E.</p>
-        <div class="divider-h"></div>
-        <div class="project-collage">
-          <img src="assets/photos/temp.png" alt="Showcase 1">
-          <img src="assets/photos/temp.png" alt="Showcase 2">
-          <img src="assets/photos/temp.png" alt="Showcase 3">
-          <img src="assets/photos/temp.png" alt="Showcase 4">
-          <img src="assets/photos/temp.png" alt="Showcase 5">
-          <img src="assets/photos/temp.png" alt="Showcase 6">
-          <img src="assets/photos/temp.png" alt="Showcase 7">
-          <img src="assets/photos/temp.png" alt="Showcase 8">
-          <img src="assets/photos/temp.png" alt="Showcase 9">
-        </div>
-      </div>
-
+  <nav class="action-dock" id="actionDock">
+    <button class="dock-trigger" id="dockTrigger">
+      <span class="trigger-dot"></span>
+    </button>
+    <div class="dock-menu">
+      <a href="index.html" class="dock-item">Home</a>
+      <a href="projects.html" class="dock-item">Projects</a>
+      <a href="passcode.html" class="dock-item font-special">?</a>
+      <a href="copyright.html" class="dock-item font-special">©</a>
     </div>
-
-    <div class="project-icons">
-      <div class="icon-list">
-      </div>
-    </div>
-
-  </section>
+  </nav>
 
   <script src="script.js"></script>
 </body>

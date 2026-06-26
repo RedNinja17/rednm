@@ -1,15 +1,59 @@
 window.addEventListener("load", () => {
     initVirtualScroll();
     initCollageLayouts();
+    initActionDock();
 });
+
+window.addEventListener("resize", () => {
+    initVirtualScroll();
+});
+
+function initActionDock() {
+    const dock = document.getElementById("actionDock");
+    const trigger = document.getElementById("dockTrigger");
+
+    trigger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        dock.classList.toggle("expanded");
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!dock.contains(e.target)) {
+            dock.classList.remove("expanded");
+        }
+    });
+}
+
 function initCollageLayouts() {
+    const viewer = document.querySelector(".project-viewer");
     const collages = document.querySelectorAll(".project-collage");
 
     collages.forEach(collage => {
         const imgs = Array.from(collage.querySelectorAll("img"));
-        imgs.forEach(img => img.classList.remove("span-2x2", "span-2x1", "span-1x2"));
-        collage.classList.remove("single-item");
+        imgs.forEach(img => {
+            img.classList.remove("span-2x2", "span-2x1", "span-1x2");
 
+            let leaveTimeout = null;
+
+            img.addEventListener("mouseenter", () => {
+                if (window.innerWidth > 900) {
+                    if (leaveTimeout) clearTimeout(leaveTimeout);
+                    viewer.classList.add("is-hovering-image");
+                }
+            });
+
+            img.addEventListener("mouseleave", () => {
+                if (window.innerWidth > 900) {
+                    leaveTimeout = setTimeout(() => {
+                        viewer.classList.remove("is-hovering-image");
+                    }, 500);
+                } else {
+                    viewer.classList.remove("is-hovering-image");
+                }
+            });
+        });
+
+        collage.classList.remove("single-item");
         const count = imgs.length;
 
         if (count === 1) {
@@ -51,12 +95,30 @@ function initCollageLayouts() {
     });
 }
 
+let scrollAnimationId = null;
+
 function initVirtualScroll() {
+    if (scrollAnimationId) {
+        cancelAnimationFrame(scrollAnimationId);
+        scrollAnimationId = null;
+    }
+
     const scrollArea = document.querySelector(".project-scroll");
     const panels = Array.from(document.querySelectorAll(".project-panel"));
     const iconList = document.querySelector(".icon-list");
+    const viewer = document.querySelector(".project-viewer");
     const projectCount = panels.length;
+
     if (projectCount === 0) return;
+
+    if (window.innerWidth <= 900) {
+        panels.forEach(panel => {
+            panel.style.transform = "";
+            panel.style.opacity = "";
+        });
+        iconList.innerHTML = "";
+        return;
+    }
 
     iconList.innerHTML = "";
     const letters = panels.map((_, i) => String.fromCharCode(65 + i));
@@ -79,6 +141,8 @@ function initVirtualScroll() {
     let startY = 0;
 
     function updateElements() {
+        if (window.innerWidth <= 900) return;
+
         panels.forEach((panel, index) => {
             let diff = index - (currentIndex % projectCount);
 
@@ -89,7 +153,6 @@ function initVirtualScroll() {
             }
 
             const absDiff = Math.abs(diff);
-
             const targetY = diff * 700;
             panel.style.transform = `translateY(${targetY}px)`;
 
@@ -102,15 +165,14 @@ function initVirtualScroll() {
             }
         });
 
-        const radiusX = 45;
-        const radiusY = 240;
+        const radiusX = 35;
+        const radiusY = 220;
         const angleStep = 26;
         const totalIcons = projectCount * 3;
         const centerProgressIndex = projectCount + (currentIndex % projectCount);
 
         icons.forEach((icon, index) => {
             let diff = index - centerProgressIndex;
-
             diff = ((diff + totalIcons * 1.5) % totalIcons) - totalIcons * 0.5;
 
             const absDiff = Math.abs(diff);
@@ -143,6 +205,8 @@ function initVirtualScroll() {
     }
 
     function animate() {
+        if (window.innerWidth <= 900) return;
+
         if (!isDragging) {
             currentIndex += (targetIndex - currentIndex) * 0.1;
             if (Math.abs(targetIndex - currentIndex) < 0.001) {
@@ -153,12 +217,13 @@ function initVirtualScroll() {
         }
 
         updateElements();
-        requestAnimationFrame(animate);
+        scrollAnimationId = requestAnimationFrame(animate);
     }
 
     let wheelTimeout = null;
-    window.addEventListener("wheel", (e) => {
-        if (!e.target.closest(".project-viewer")) return;
+
+    viewer.addEventListener("wheel", (e) => {
+        if (window.innerWidth <= 900) return;
         e.preventDefault();
 
         targetIndex += e.deltaY * 0.003;
@@ -172,6 +237,7 @@ function initVirtualScroll() {
     }, { passive: false });
 
     scrollArea.addEventListener("pointerdown", (e) => {
+        if (window.innerWidth <= 900) return;
         if (e.target.closest(".project-link") || e.target.closest(".project-collage")) return;
         isDragging = true;
         startY = e.clientY;
@@ -179,7 +245,7 @@ function initVirtualScroll() {
     });
 
     scrollArea.addEventListener("pointermove", (e) => {
-        if (!isDragging) return;
+        if (!isDragging || window.innerWidth <= 900) return;
         const deltaY = e.clientY - startY;
         startY = e.clientY;
 
@@ -195,8 +261,10 @@ function initVirtualScroll() {
     scrollArea.addEventListener("pointerup", endDrag);
     scrollArea.addEventListener("pointercancel", endDrag);
 
-    icons.forEach((icon, i) => {
+    icons.forEach((icon) => {
         icon.addEventListener("click", () => {
+            if (window.innerWidth <= 900) return;
+
             const targetBase = parseInt(icon.dataset.index, 10);
             const currentActiveBase = ((Math.round(targetIndex) % projectCount) + projectCount) % projectCount;
 
@@ -204,10 +272,18 @@ function initVirtualScroll() {
             if (diff > projectCount / 2) diff -= projectCount;
             if (diff < -projectCount / 2) diff += projectCount;
 
+            const computedStyle = window.getComputedStyle(icon);
+            const matrix = new WebKitCSSMatrix(computedStyle.transform);
+            const currentYPosition = matrix.m42;
+
+            if (Math.abs(diff) === projectCount / 2 && currentYPosition < 0) {
+                diff = -Math.abs(diff);
+            }
+
             targetIndex += diff;
         });
     });
 
     updateElements();
-    requestAnimationFrame(animate);
+    scrollAnimationId = requestAnimationFrame(animate);
 }
