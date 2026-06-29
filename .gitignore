@@ -15,3 +15,6 @@ Thumbs.db
 node_modules/
 dist/
 __pycache__/
+
+# other
+cms-config.js

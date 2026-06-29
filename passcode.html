@@ -42,20 +42,20 @@
         let currentPin = "";
         const dots = document.querySelectorAll(".pin-dot");
 
-        function pressKey(num) {
+        function pressKey(key) {
             if (currentPin.length < 4) {
-                currentPin += num;
-                updateDisplay();
+                currentPin += key;
+                updateDots();
             }
         }
 
         function clearPin() {
             currentPin = "";
-            updateDisplay();
+            updateDots();
             document.querySelector(".pin-display").classList.remove("error");
         }
 
-        function updateDisplay() {
+        function updateDots() {
             dots.forEach((dot, index) => {
                 if (index < currentPin.length) {
                     dot.classList.add("filled");
@@ -77,7 +77,8 @@
             const targetHash = await hashPin("2009");
 
             if (inputHash === targetHash) {
-                window.location.href = "home.html";
+                sessionStorage.setItem("cms_auth_token", inputHash);
+                window.location.href = "index.html";
             } else {
                 const display = document.querySelector(".pin-display");
                 display.classList.add("error");
@@ -92,7 +93,7 @@
                 pressKey(e.key);
             } else if (e.key === "Enter") {
                 submitPin();
-            } else if (e.key === "Backspace" || e.key === "Escape") {
+            } else if (e.key === "Backspace" || e.key === "Delete") {
                 clearPin();
             }
         });
