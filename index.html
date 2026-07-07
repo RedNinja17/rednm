@@ -24,7 +24,7 @@
             <div class="header-main">
               <span class="project-status status-done"></span>
               <a href="projectA.html" class="project-link">
-                <h2 class="project-title">Project A<span class="title-arrow"><img src="assets/photos/arrow.svg"
+                <h2 class="project-title">1 | Camera<span class="title-arrow"><img src="assets/photos/arrow.svg"
                       alt="Arrow" /><img src="assets/photos/arrow.svg" alt="Arrow" /></span></h2>
               </a>
             </div>
@@ -32,15 +32,15 @@
             <div class="project-meta-info">
               <div class="meta-item">
                 <span class="meta-icon">$</span>
-                <span class="meta-bubble">Free</span>
+                <span class="meta-bubble">200 USD</span>
               </div>
               <div class="meta-item">
                 <span class="meta-icon"><img src="assets/photos/calendar.svg" alt="Calendar Icon" /></span>
-                <span class="meta-bubble">Jan 2026</span>
+                <span class="meta-bubble">July 2026</span>
               </div>
               <div class="meta-item">
                 <span class="meta-icon"><img src="assets/photos/tool.svg" alt="Tool Icon" /></span>
-                <span class="meta-bubble">C++</span>
+                <span class="meta-bubble">Fusion 360 | Raspberry Pi | Python</span>
               </div>
             </div>
           </div>
@@ -210,10 +210,25 @@
     <div class="dock-menu">
       <a href="index.html" class="dock-item">Home</a>
       <a href="projects.html" class="dock-item">Projects</a>
-      <a href="passcode.html" class="dock-item font-special">?</a>
+      <button class="dock-item settings" id="settings-btn">Settings</button>
+      <a href="cms.html" class="dock-item">CMS</a>
       <a href="copyright.html" class="dock-item font-special">©</a>
     </div>
   </nav>
+
+  <div class="settings-menu" id="settings-popup">
+    <div class="popup">
+      <h2>Settings</h2>
+      <div>
+        <h3>Personalization</h3>
+        <p>Theme</p>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
   <script src="cms-config.js"></script>

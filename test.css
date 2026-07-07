@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Bitcount';
+    src: url('assets/fonts/Bitcount.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    overscroll-behavior: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Bitcount", system-ui, sans-serif;
+    min-height: 100vh;
+    background: radial-gradient(ellipse at bottom right, #69d4ff 0%, #b7c4cf 50%, #c9c9c9 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+    padding: 60px 0 140px 0;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+}

@@ -266,7 +266,7 @@ a:active {
 }
 
 .action-dock.expanded {
-    width: 420px;
+    width: 520px;
     background: rgba(28, 4, 4, 0.85);
     border-color: rgba(255, 92, 92, 0.2);
 }

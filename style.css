@@ -6,8 +6,14 @@
     font-display: swap;
 }
 
+html::-webkit-scrollbar {
+    display: none;
+}
+
 html {
     overscroll-behavior: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 * {
@@ -410,6 +416,7 @@ a:active {
     border-radius: 40px;
     height: 64px;
     width: 64px;
+    max-width: 64;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -418,12 +425,13 @@ a:active {
     transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
         height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
         border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-        background-color 0.3s;
+        background-color 0.3s,
+        max-width 0.4s ease;
     z-index: 1000;
 }
 
 .action-dock.expanded {
-    width: 420px;
+    width: 500px;
     background: rgba(28, 4, 4, 0.85);
     border-color: rgba(255, 92, 92, 0.2);
 }
@@ -466,15 +474,18 @@ a:active {
     padding-right: 30px;
     opacity: 0;
     transform: translateX(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, max-width 0.4s ease;
     white-space: nowrap;
-    width: 100%;
+    width: fit-content;
+    max-width: 0;
 }
 
 .action-dock.expanded .dock-menu {
     opacity: 1;
     transform: translateX(0);
-    transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+    transition: opacity 0.4s ease 0.1s, transform 1s ease 0.1s;
+    max-width: 500px;
 }
 
 .dock-item {
@@ -489,8 +500,128 @@ a:active {
 }
 
 .font-special {
-    font-size: 1.3rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.75rem;
     font-weight: bold;
+}
+
+.settings {
+    font-family: "Bitcount", system-ui, sans-serif;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    color: #b0b0b0;
+}
+
+.settings:hover {
+    cursor: pointer;
+    color: #ff5c5c;
+    transform: translateY(-2px);
+}
+
+.settings-menu {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.popup {
+    width: 85vw;
+    max-width: 1300px;
+    height: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 24px;
+    padding: 35px;
+    background: rgba(15, 2, 2, 0.65);
+    backdrop-filter: blur(50px) saturate(140%);
+    -webkit-backdrop-filter: blur(50px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8), inset 0 1px 0px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    animation: viewerEntrance 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+    position: relative;
+}
+
+.settings-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.settings-menu.active .popup {
+    transform: scale(1);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #ff5c5c;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #ff5c5c;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.project-viewer.hide {
+    overflow: hidden !important;
 }
 
 @keyframes heroEntrance {
@@ -562,19 +693,5 @@ a:active {
 
     .project-description {
         max-width: 100%;
-    }
-
-    .action-dock.expanded {
-        width: 180px;
-        height: 180px;
-        border-radius: 24px;
-    }
-
-    .action-dock.expanded .dock-menu {
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 12px;
-        padding: 20px 20px 20px 64px;
     }
 }

@@ -2,6 +2,7 @@ window.addEventListener("load", () => {
     initVirtualScroll();
     initCollageLayouts();
     initActionDock();
+    initSettings();
 });
 
 window.addEventListener("resize", () => {
@@ -12,12 +13,12 @@ function initActionDock() {
     const dock = document.getElementById("actionDock");
     const trigger = document.getElementById("dockTrigger");
 
-    trigger.addEventListener("click", (e) => {
+    trigger.addEventListener('click', (e) => {
         e.stopPropagation();
         dock.classList.toggle("expanded");
     });
 
-    document.addEventListener("click", (e) => {
+    document.addEventListener('click', (e) => {
         if (!dock.contains(e.target)) {
             dock.classList.remove("expanded");
         }
@@ -121,7 +122,7 @@ function initVirtualScroll() {
     }
 
     iconList.innerHTML = "";
-    const letters = panels.map((_, i) => String.fromCharCode(65 + i));
+    const letters = ['1', '2', '3', '4', '5'];
 
     for (let i = 0; i < 3; i++) {
         letters.forEach((letter, index) => {
@@ -226,20 +227,27 @@ function initVirtualScroll() {
         if (window.innerWidth <= 900) return;
         e.preventDefault();
 
+        viewer.classList.add("hide");
+
         targetIndex += e.deltaY * 0.003;
 
         if (wheelTimeout) clearTimeout(wheelTimeout);
+
         wheelTimeout = setTimeout(() => {
             if (!isDragging) {
                 targetIndex = Math.round(targetIndex);
             }
-        }, 150);
+            viewer.classList.remove("hide");
+        }, 250);
     }, { passive: false });
 
     scrollArea.addEventListener("pointerdown", (e) => {
         if (window.innerWidth <= 900) return;
         if (e.target.closest(".project-link") || e.target.closest(".project-collage")) return;
         isDragging = true;
+
+        viewer.classList.add("hide");
+
         startY = e.clientY;
         scrollArea.setPointerCapture(e.pointerId);
     });
@@ -252,17 +260,20 @@ function initVirtualScroll() {
         targetIndex -= deltaY * 0.007;
     });
 
+    // Kept the correct version of endDrag that clears your hide class
     const endDrag = (e) => {
         if (!isDragging) return;
         isDragging = false;
         targetIndex = Math.round(targetIndex);
+
+        viewer.classList.remove("hide");
     };
 
     scrollArea.addEventListener("pointerup", endDrag);
     scrollArea.addEventListener("pointercancel", endDrag);
 
     icons.forEach((icon) => {
-        icon.addEventListener("click", () => {
+        icon.addEventListener('click', () => {
             if (window.innerWidth <= 900) return;
 
             const targetBase = parseInt(icon.dataset.index, 10);
@@ -286,4 +297,19 @@ function initVirtualScroll() {
 
     updateElements();
     scrollAnimationId = requestAnimationFrame(animate);
+}
+
+function initSettings() {
+    const settingsBtn = document.getElementById('settings-btn');
+    const popup = document.getElementById('settings-popup');
+
+    settingsBtn.addEventListener('click', () => {
+        popup.classList.add('active');
+    });
+
+    popup.addEventListener('click', (e) => {
+        if (e.target === popup) {
+            popup.classList.remove('active');
+        }
+    });
 }

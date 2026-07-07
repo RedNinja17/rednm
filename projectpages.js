@@ -4,6 +4,26 @@ const nodes = document.querySelectorAll('.node');
 const sections = document.querySelectorAll('.section');
 const hoverLabel = document.getElementById('timelineHoverLabel');
 
+window.addEventListener("load", () => {
+    initActionDock();
+});
+
+function initActionDock() {
+    const dock = document.getElementById("actionDock");
+    const trigger = document.getElementById("dockTrigger");
+
+    trigger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        dock.classList.toggle("expanded");
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!dock.contains(e.target)) {
+            dock.classList.remove("expanded");
+        }
+    });
+}
+
 let isDragging = false;
 
 function updateTimeline() {
