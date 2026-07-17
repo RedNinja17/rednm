@@ -102,7 +102,14 @@ a:active {
 }
 
 .project-viewer.is-hovering-image {
+    /* allow images to visually escape the container when hovering, but this can be overridden by the 'hide' state during scroll */
     overflow: visible !important;
+}
+
+/* while scrolling or during a drag, the .hide class is applied — force all inner scroll areas to be hidden */
+.project-viewer.hide,
+.project-viewer.hide .project-scroll {
+    overflow: hidden !important;
 }
 
 .project-scroll {
@@ -115,6 +122,7 @@ a:active {
     overflow: hidden;
 }
 
+/* when hovering images allow them to overflow so they can scale out-of-bounds */
 .project-viewer.is-hovering-image .project-scroll {
     overflow: visible;
 }
@@ -172,6 +180,14 @@ a:active {
     display: flex;
     align-items: center;
     gap: 12px;
+    overflow-wrap: break-word;
+
+    /* allow the title to truncate with ellipsis instead of creating scrollbars */
+    min-width: 0; /* enable flex children to shrink */
+    max-width: calc(100% - 60px); /* leave room for the arrow */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .title-arrow {

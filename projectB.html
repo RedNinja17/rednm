@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico" />
+    <title>G920-Mounted Gauge Cluster</title>
+    <link rel="stylesheet" href="projectpages.css" />
+</head>
+
+<body>
+    <div class="header-mask"></div>
+    <a href="index.html" class="back-dashboard">Return to Dashboard</a>
+
+    <div class="content-container">
+        <div class="project-header-main">
+            <span class="project-status status-working">In Progress</span>
+            <div class="project-title-group">
+                <h1 class="project-main-title">G920-Mounted Gauge Cluster</h1>
+                <p class="project-description">Hybrid analog-digital gauge cluster designed to mount onto a Logitech G920
+                    wheel base. Through an Arduino Uno R4 and ESP32-S3 it will support NeoPixel lighting and servos based on
+                    telemetry data to control indicators for speedometer, tachometer, fuel level, coolant temperature,
+                    and oil pressure. An analog odometer and small LCD for extra data is also planned. The housing is planned to
+                    primarily be 3D-printed with some wood or metal accents and carbon-fiber wrap.</p>
+            </div>
+        </div>
+
+        <div class="section" id="sec-planning" data-label="Planning">
+            <h2>Planning Stage</h2>
+            <p>Designing the housing and selecting microcontrollers and sensors. Initial BOM and wiring diagrams are being
+                drafted.</p>
+            <img src="assets/photos/temp.png" alt="Planning Showcase" />
+        </div>
+
+        <div class="section" id="sec-development" data-label="Development">
+            <h2>Core Development</h2>
+            <p>Firmware for ESP32-S3 and integration with Arduino Uno R4 for servo control and NeoPixel driving. 3D model
+                iterations in Fusion 360 are underway.</p>
+            <img src="assets/photos/temp.png" alt="Development Showcase" />
+        </div>
+
+        <div class="section" id="sec-testing" data-label="Testing">
+            <h2>Testing</h2>
+            <p>Telemetry integration testing with a simulator and live testing on a G920 wheel base.</p>
+            <img src="assets/photos/temp.png" alt="Testing Showcase" />
+        </div>
+
+        <div class="section" id="sec-deployment" data-label="Deployment">
+            <h2>Final Deployment</h2>
+            <p>Preparing mounting hardware and final assembly for use in a sim-rig.</p>
+            <img src="assets/photos/temp.png" alt="Deployment Showcase" />
+        </div>
+
+        <div class="section" id="sec-links" data-label="Links">
+            <h2>Project Links</h2>
+            <div class="project-links-wrapper">
+                <ul class="links-list">
+                    <li><strong>Estimated Cost:</strong> $15.00</li>
+                    <li><strong>Completion Date:</strong> May 2026</li>
+                    <li><strong>Tools:</strong> Fusion 360</li>
+                    <li><strong>GitHub Repository:</strong> <span data-cms-id="projectB-github-link">https://github.com/yourusername/g920-gauges</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="timeline-container">
+        <div class="timeline-wrapper" id="timelineWrapper">
+            <div class="timeline-line"></div>
+            <div class="timeline-progress" id="timelineProgress"></div>
+            <div class="timeline-nodes">
+                <div class="node" data-target="sec-planning">
+                    <div class="node-date">Mar 01, 2026</div>
+                </div>
+                <div class="node" data-target="sec-development">
+                    <div class="node-date">Apr 15, 2026</div>
+                </div>
+                <div class="node" data-target="sec-testing">
+                    <div class="node-date">May 10, 2026</div>
+                </div>
+                <div class="node" data-target="sec-deployment">
+                    <div class="node-date">May 30, 2026</div>
+                </div>
+            </div>
+            <div class="timeline-hover-label" id="timelineHoverLabel"></div>
+        </div>
+    </div>
+
+    <nav class="action-dock" id="actionDock">
+        <button class="dock-trigger" id="dockTrigger">
+            <span class="trigger-dot"></span>
+        </button>
+        <div class="dock-menu">
+            <a href="index.html" class="dock-item">Home</a>
+            <a href="projects.html" class="dock-item">Projects</a>
+            <a href="passcode.html" class="dock-item font-special">?</a>
+            <a href="copyright.html" class="dock-item font-special">©</a>
+        </div>
+    </nav>
+
+    <script src="projectpages.js"></script>
+    <script src="cms-config.js"></script>
+    <script src="cms.js"></script>
+</body>
+
+</html>
