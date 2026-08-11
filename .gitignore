@@ -17,4 +17,4 @@ dist/
 __pycache__/
 
 # other
-cms-config.js
+archive/
