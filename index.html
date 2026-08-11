@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico" />
-  <title>Portfolio | Nicholas Maryniy</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#400202">
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico">
+    <title>Portfolio | Nicholas Maryniy</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="index.css">
+  </head>
 
-<body>
-  <header class="portfolio-hero">
-    <h1 class="glitch-title">Nicholas Maryniy</h1>
-    <p class="subtitle">Engineering | Energy Systems & Mechanical<br>Programmer | Lua, Java, & C++</p>
-    <a href="projects.html" class="cta-link">Explore Projects</a>
-  </header>
+  <body>
+    <header class="main">
+      <h1 class="title">Nicholas Maryniy</h1>
+      <p class="subtitle">Engineering | Energy Systems &
+        Mechanical<br>Programmer | Lua, Java, & C++</p>
+      <a href="projects.html" class="link">Explore Projects</a>
+    </header>
 
-  <nav class="action-dock" id="actionDock">
-    <button class="dock-trigger" id="dockTrigger">
-      <span class="trigger-dot"></span>
-    </button>
-    <div class="dock-menu">
-      <a href="index.html" class="dock-item">Home</a>
-      <a href="projects.html" class="dock-item">Projects</a>
-      <button class="dock-item settings" id="settings-btn">Settings</button>
-      <a href="copyright.html" class="dock-item font-special">©</a>
-    </div>
-  </nav>
+    <nav class="dock" id="dock">
+      <button class="dock-btn" id="dock-btn">
+        <span class="dot"></span>
+      </button>
+      <div class="dock-menu">
+        <a href="index.html" class="item">Home</a>
+        <a href="projects.html" class="item">Projects</a>
+        <button class="item" id="settings-btn">Settings</button>
+        <a href="copyright.html" class="item font-special">©</a>
+      </div>
+    </nav>
 
-  <div class="settings-menu" id="settings-popup">
-    <div class="popup">
-      <h2>Settings</h2>
-      <div>
-        <h3>Personalization</h3>
-        <p>Theme</p>
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
+    <div class="popup" id="settings-pop-up">
+      <div class="card">
+        <h2>Settings</h2>
+        <div>
+          <h3>Personalization</h3>
+          <p>Theme</p>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script src="script.js"></script>
-</body>
+    <script src="index.js"></script>
+  </body>
 
 </html>
