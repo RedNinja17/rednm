@@ -13,37 +13,125 @@
 
   <body>
     <header class="main">
-      <h1 class="title">Nicholas Maryniy</h1>
-      <p class="subtitle">Engineering | Energy Systems &
-        Mechanical<br>Programmer | Lua, Java, & C++</p>
-      <a href="projects.html" class="link">Explore Projects</a>
+      <div class="info fade-in">
+        <h1 class="title">Nicholas Maryniy</h1>
+
+        <h2 class="skills-header">Engineering</h2>
+        <div class="skills-grid">
+          <span class="skill">Energy Systems</span>
+          <span class="skill">Mechanical</span>
+          <span class="skill">Electrical</span>
+          <span class="skill">Welding</span>
+          <span class="skill">Fusion 360</span>
+          <span class="skill">Autodesk CFD</span>
+        </div>
+        <h2 class="skills-header">Programming</h2>
+        <div class="skills-grid">
+          <span class="skill">Lua</span>
+          <span class="skill">Java</span>
+          <span class="skill">C++</span>
+          <span class="skill">Python</span>
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+        </div>
+      </div>
+
+      <div class="bio fade-in">
+        <p>I am an engineering student at <a href="https://tjhsst.fcps.edu"
+            class="inline-link">TJHSST</a> developing the hardware and software
+          for multiple personal <a href="projects/"
+            class="inline-link">projects.</a> Currently, I am expanding my
+          knowledge in both <a href="https://python.org"
+            class="inline-link">Python</a> and welding,
+          with plans to study <a href="riscv.org"
+            class="inline-link">assembly</a> and
+          computational hardware design in the future. Beyond engineering, I
+          enjoy automotive and scenic <a href="photography"
+            class="inline-link">photography,</a> as
+          well as horology.</p>
+      </div>
     </header>
+
+    <div class="fade-in"><h1 class="title center">Favorite Projects:</h1></div>
+    <div class="project-menu fade-in">
+      <div class="project">
+        <div class="project-header">
+          <div class="title-status-group">
+            <span class="project-status status-working"></span>
+            <h2 class="project-title">PiCam</h2>
+          </div>
+          <span class="header-bubble">Jan 2026</span>
+        </div>
+        <p class="project-desc">Digital camera utilizing the RPi 4B, with a
+          Raspberry Pi HQ Camera module. Based on the 1972 Canon Canonet G-III
+          QL17 and Canon EOS series, primarily the 2000's EOS-1V.</p>
+        <div class="card-footer">
+          <div class="tag-group">
+            <span class="tag">Fusion 360</span>
+            <span class="tag">FDM Printing</span>
+            <span class="tag">Python</span>
+          </div>
+          <span class="price-tag header-bubble">$ 200</span>
+          <a href="projects/projectA/" class="view-link">View Details &rarr;</a>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project-header">
+          <div class="title-status-group">
+            <span class="project-status status-not-started"></span>
+            <h2 class="project-title">G920 Pedals</h2>
+          </div>
+          <span class="header-bubble">N/A</span>
+        </div>
+        <p class="project-desc">Inverted pedals designed for the three pedals
+          from the Logitech G920. While the main body will be made of aromatic
+          wood, the footrest will be from two pieces of diamond-plate steel
+          welded together.</p>
+        <div class="card-footer">
+          <div class="tag-group">
+            <span class="tag">Welding</span>
+            <span class="tag">Soldering</span>
+            <span class="tag">Machining</span>
+          </div>
+          <span class="price-tag header-bubble">$ 180</span>
+          <a href="projects/projectB/" class="view-link">View Details &rarr;</a>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project-header">
+          <div class="title-status-group">
+            <span class="project-status status-working"></span>
+            <h2 class="project-title">Sim Cluster</h2>
+          </div>
+          <span class="header-bubble">Dec 2028</span>
+        </div>
+        <p class="project-desc">Hybrid analog-digital gauge cluster designed to
+          mount onto the G920 wheel. An Arduino Uno R4 and ESP32-S3 will power
+          an analog odometer, LCD, and guages for visualization of telemetry
+          data.</p>
+        <div class="project-footer">
+          <div class="tag-group">
+            <span class="tag">Fusion 360</span>
+            <span class="tag">FDM Printing</span>
+            <span class="tag">Wrapping</span>
+          </div>
+          <span class="price-tag header-bubble">$ 150</span>
+          <a href="projects/projectC/" class="view-link">View Details &rarr;</a>
+        </div>
+      </div>
+    </div>
 
     <nav class="dock" id="dock">
       <button class="dock-btn" id="dock-btn">
         <span class="dot"></span>
       </button>
       <div class="dock-menu">
-        <a href="../" class="item">Home</a>
-        <a href="projects/" class="item">Projects</a>
-        <button class="item" id="settings-btn">Settings</button>
-        <a href="misc/copyright/" class="item font-special">©</a>
+        <a href="../" class="dock-item">Home</a>
+        <a href="projects/" class="dock-item">Projects</a>
+        <a href="photography/" class="dock-item">Photos</a>
+        <a href="misc/copyright/" class="dock-item copyright">©</a>
       </div>
     </nav>
-
-    <div class="popup" id="settings-pop-up">
-      <div class="card">
-        <h2>Settings</h2>
-        <div>
-          <h3>Personalization</h3>
-          <p>Theme</p>
-          <label class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-          </label>
-        </div>
-      </div>
-    </div>
 
     <script src="home.js"></script>
   </body>

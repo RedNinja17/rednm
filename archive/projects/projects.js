@@ -1,21 +1,21 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const dock = document.getElementById("dock");
-    const dockBtn = document.getElementById("dock-btn");
+document.addEventListener('DOMContentLoaded', () => {
+    const dockTrigger = document.getElementById('dockTrigger');
+    const actionDock = document.getElementById('actionDock');
 
-    dockBtn?.addEventListener("click", (e) => {
-        e.stopPropagation();
-        dock.classList.toggle("expanded");
-    });
+    if (dockTrigger && actionDock) {
+        dockTrigger.addEventListener('click', () => {
+            actionDock.classList.toggle('expanded');
+        });
 
-    document.addEventListener("click", (e) => {
-        if (dock && !dock.contains(e.target)) {
-            dock.classList.remove("expanded");
-        }
-    });
+        document.addEventListener('click', (e) => {
+            if (!actionDock.contains(e.target)) {
+                actionDock.classList.remove('expanded');
+            }
+        });
+    }
 
     const filterContainer = document.getElementById('filterContainer');
-    const projectCards = document.querySelectorAll('.project');
-    const projectGrid = document.getElementById('grid')
+    const projectCards = document.querySelectorAll('.project-card');
 
     const techDisplayNames = {
         'cpp': 'C++',
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const uniqueTechs = new Set();
     projectCards.forEach(card => {
-        const techAttr = card.getAttribute('data');
+        const techAttr = card.getAttribute('data-tech');
         if (techAttr) {
             techAttr.split(' ').forEach(tech => {
                 const trimmed = tech.trim();
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     uniqueTechs.forEach(tech => {
         const btn = document.createElement('button');
         btn.classList.add('filter-btn');
-        btn.setAttribute('filter', tech);
+        btn.setAttribute('data-filter', tech);
         btn.textContent = techDisplayNames[tech] || tech;
         filterContainer.appendChild(btn);
     });
@@ -51,12 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            const filterValue = button.getAttribute('filter');
-
-            projectGrid.classList.add('hidden');
+            const filterValue = button.getAttribute('data-filter');
 
             projectCards.forEach(card => {
-                const cardTechAttr = card.getAttribute('data') || '';
+                const cardTechAttr = card.getAttribute('data-tech') || '';
                 const cardTechs = cardTechAttr.split(' ');
 
                 if (filterValue === 'all' || cardTechs.includes(filterValue)) {
@@ -65,8 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     card.classList.add('hidden');
                 }
             });
-
-            projectGrid.classList.remove('hidden');
         });
     });
 });
