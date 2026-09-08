@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico" />
+    <title>Raspberry Pi 5 Server + Minecraft Server</title>
+    <link rel="stylesheet" href="projectpages.css" />
+</head>
+
+<body>
+    <div class="header-mask"></div>
+    <a href="index.html" class="back-dashboard">Return to Dashboard</a>
+
+    <div class="content-container">
+        <div class="project-header-main">
+            <span class="project-status status-working">In Progress</span>
+            <div class="project-title-group">
+                <h1 class="project-main-title">Raspberry Pi 5 Server + Minecraft Server</h1>
+                <p class="project-description">Setting up a Raspberry Pi 5 as a headless server to host a lightweight
+                    Minecraft server instance. Goals include containerized deployment, automated backups to an external
+                    drive, remote monitoring, and optimizing performance for small groups.</p>
+            </div>
+        </div>
+
+        <div class="section" id="sec-planning" data-label="Planning">
+            <h2>Planning Stage</h2>
+            <p>Select OS image, plan networking (static IP/port forwarding), and determine backup strategy.</p>
+            <img src="assets/photos/temp.png" alt="Planning Showcase" />
+        </div>
+
+        <div class="section" id="sec-development" data-label="Development">
+            <h2>Core Development</h2>
+            <p>Install Docker, build a lightweight container for the Minecraft server (paper or purpur), configure
+                autosave and resource limits, and create systemd unit or docker compose for auto-restart.</p>
+            <img src="assets/photos/temp.png" alt="Development Showcase" />
+        </div>
+
+        <div class="section" id="sec-testing" data-label="Testing">
+            <h2>Testing</h2>
+            <p>Test connectivity, performance under simulated players, and verify backups and restores.</p>
+            <img src="assets/photos/temp.png" alt="Testing Showcase" />
+        </div>
+
+        <div class="section" id="sec-deployment" data-label="Deployment">
+            <h2>Final Deployment</h2>
+            <p>Expose service with secure port forwarding or use a VPN. Document startup, backup, and maintenance
+                procedures.</p>
+            <img src="assets/photos/temp.png" alt="Deployment Showcase" />
+        </div>
+
+        <div class="section" id="sec-links" data-label="Links">
+            <h2>Project Links</h2>
+            <div class="project-links-wrapper">
+                <ul class="links-list">
+                    <li><strong>Estimated Cost:</strong> $250 USD (Pi + storage)</li>
+                    <li><strong>Planned Completion:</strong> July 2026</li>
+                    <li><strong>Tools:</strong> Raspberry Pi 5, Docker, Linux</li>
+                    <li><strong>Notes:</strong> Aim for containerized, reproducible setup</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="timeline-container">
+        <div class="timeline-wrapper" id="timelineWrapper">
+            <div class="timeline-line"></div>
+            <div class="timeline-progress" id="timelineProgress"></div>
+            <div class="timeline-nodes">
+                <div class="node" data-target="sec-planning">
+                    <div class="node-date">Jun 01, 2026</div>
+                </div>
+                <div class="node" data-target="sec-development">
+                    <div class="node-date">Jun 15, 2026</div>
+                </div>
+                <div class="node" data-target="sec-testing">
+                    <div class="node-date">Jun 25, 2026</div>
+                </div>
+                <div class="node" data-target="sec-deployment">
+                    <div class="node-date">Jul 05, 2026</div>
+                </div>
+            </div>
+            <div class="timeline-hover-label" id="timelineHoverLabel"></div>
+        </div>
+    </div>
+
+    <nav class="action-dock" id="actionDock">
+        <button class="dock-trigger" id="dockTrigger">
+            <span class="trigger-dot"></span>
+        </button>
+        <div class="dock-menu">
+            <a href="index.html" class="dock-item">Home</a>
+            <a href="projects.html" class="dock-item">Projects</a>
+            <a href="passcode.html" class="dock-item font-special">?</a>
+            <a href="copyright.html" class="dock-item font-special">©</a>
+        </div>
+    </nav>
+
+    <script src="projectpages.js"></script>
+    <script src="cms-config.js"></script>
+    <script src="cms.js"></script>
+</body>
+
+</html>
