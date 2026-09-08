@@ -1,253 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico" />
-  <title>Portfolio | Nicholas Maryniy</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#400202">
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico">
+    <title>Portfolio | Nicholas Maryniy</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="home.css">
+  </head>
 
-<body>
-  <header class="portfolio-hero">
-    <h1 class="glitch-title">Nicholas Maryniy</h1>
-    <p class="subtitle">Engineering | Energy Systems & Mechanical<br>Programmer | Lua, Java, & C++</p>
-    <a href="projects.html" class="cta-link">Explore Projects</a>
-  </header>
+  <body>
+    <header class="main">
+      <div class="info fade-in">
+        <h1 class="title">Nicholas Maryniy</h1>
 
-  <main>
-    <section class="project-viewer">
-      <div class="project-scroll">
-        <div class="project-panel active-panel">
-          <div class="project-header">
-            <div class="header-main">
-              <span class="project-status status-done"></span>
-              <a href="projectA.html" class="project-link">
-                <h2 class="project-title">1 | Retro Raspberry Pi-Based Camera<span class="title-arrow"><img
-                      src="assets/photos/arrow.svg" alt="Arrow" /><img src="assets/photos/arrow.svg"
-                      alt="Arrow" /></span></h2>
-              </a>
-            </div>
-            <div class="divider-v"></div>
-            <div class="project-meta-info">
-              <div class="meta-item">
-                <span class="meta-icon">$</span>
-                <span class="meta-bubble">180.00 USD</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-icon"><img src="assets/photos/calendar.svg" alt="Calendar Icon" /></span>
-                <span class="meta-bubble">July 2026</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-icon"><img src="assets/photos/tool.svg" alt="Tool Icon" /></span>
-                <span class="meta-bubble">Fusion 360 | Python</span>
-              </div>
-            </div>
-          </div>
-          <p class="project-description">Custom digital camera built around the Raspberry Pi Zero 1W, later upgrading to
-            a 2W, using a 128 GB micro-sd and a Raspberry Pi High-Quality Camera module with a 16mm telephoto lens. The
-            3D-printed body is based on the 1972 Canon Canonet G-III QL17, with an added right-hand grip inspired by the
-            Canon EOS series, primarily the 2000's EOS-1V. The camera will incoporate either a 0.96" OLED or a 1.44"
-            LCD, an RGBW NeoPixel flash, rotary encoders, push-buttons, and a fan for active cooling. </p>
-          <div class="divider-h"></div>
-          <div class="project-collage">
-            <img src="assets/photos/temp.png" alt="Project Showcase" />
-          </div>
+        <h2 class="skills-header">Engineering</h2>
+        <div class="skills-grid">
+          <span class="skill">Energy Systems</span>
+          <span class="skill">Mechanical</span>
+          <span class="skill">Electrical</span>
+          <span class="skill">Welding</span>
+          <span class="skill">Fusion 360</span>
+          <span class="skill">Autodesk CFD</span>
         </div>
-
-        <div class="project-panel">
-          <div class="project-header">
-            <div class="header-main">
-              <span class="project-status status-working"></span>
-              <a href="projectB.html" class="project-link">
-                <h2 class="project-title">2 | G920-Mounted Gauge Cluster<span class="title-arrow"><img
-                      src="assets/photos/arrow.svg" alt="Arrow" /><img src="assets/photos/arrow.svg"
-                      alt="Arrow" /></span></h2>
-              </a>
-            </div>
-            <div class="divider-v"></div>
-            <div class="project-meta-info">
-              <div class="meta-item">
-                <span class="meta-icon">$</span>
-                <span class="meta-bubble">$15.00</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-icon"><img src="assets/photos/calendar.svg" alt="Calendar Icon" /></span>
-                <span class="meta-bubble">May 2026</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-icon"><img src="assets/photos/tool.svg" alt="Tool Icon" /></span>
-                <span class="meta-bubble">Fusion 360</span>
-              </div>
-            </div>
-          </div>
-          <p class="project-description">Hybrid analog-digital gauge cluster designed to mount onto a Logitech G920
-            wheel base. Through an Arduino Uno R4 and ESP32-S3 it will support NeoPixel lighting and servos based on
-            telemetry data to control indicators for speedometer, tachometer, fuel level, coolant temperature,
-            and oil pressure. An analog odometer and small LCD for extra data is also planned. The housing is planned to
-            primarily be 3D-printed with some wood or metal accents and carbon-fiber wrap.</p>
-          <div class="divider-h"></div>
-          <div class="project-collage">
-            <img src="assets/photos/temp.png" alt="Showcase 1" />
-            <img src="assets/photos/temp.png" alt="Showcase 2" />
-          </div>
-        </div>
-
-        <div class="project-panel">
-          <div class="project-header">
-            <div class="header-main">
-              <span class="project-status status-not-started"></span>
-              <a href="projectC.html" class="project-link">
-                <h2 class="project-title">3 | Inverted Realistic G920 Pedals<span class="title-arrow"><img
-                      src="assets/photos/arrow.svg" alt="Arrow" /><img src="assets/photos/arrow.svg"
-                      alt="Arrow" /></span></h2>
-              </a>
-            </div>
-            <div class="divider-v"></div>
-            <div class="project-meta-info">
-              <div class="meta-item">
-                <span class="meta-icon">$</span>
-                <span class="meta-bubble">TBD</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-icon"><img src="assets/photos/calendar.svg" alt="Calendar Icon" /></span>
-                <span class="meta-bubble">TBD</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-icon"><img src="assets/photos/tool.svg" alt="Tool Icon" /></span>
-                <span class="meta-bubble">Welding</span>
-              </div>
-            </div>
-          </div>
-          <p class="project-description">Custom inverted pedals meant to utilize the pedals from the G920 and connect
-            through the wheel. The main body will have a welded diamond-plate steel for the main foot-rest, while the
-            main structure will be wood. The inverted design is planned to mimic the pedals in a real vehicle.</p>
-          <div class="divider-h"></div>
-          <div class="project-collage">
-            <img src="assets/photos/temp.png" alt="Showcase 1" />
-            <img src="assets/photos/temp.png" alt="Showcase 2" />
-            <img src="assets/photos/temp.png" alt="Showcase 3" />
-            <img src="assets/photos/temp.png" alt="Showcase 4" />
-          </div>
-        </div>
-
-        <div class="project-panel">
-          <div class="project-header">
-            <div class="header-main">
-              <span class="project-status status-not-started"></span>
-              <a href="projectD.html" class="project-link">
-                <h2 class="project-title">4 | Model Car Refinish<span class="title-arrow"><img
-                      src="assets/photos/arrow.svg" alt="Arrow" /><img src="assets/photos/arrow.svg"
-                      alt="Arrow" /></span></h2>
-              </a>
-            </div>
-            <div class="divider-v"></div>
-            <div class="project-meta-info">
-              <div class="meta-item">
-                <span class="meta-icon">$</span>
-                <span class="meta-bubble">Free</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-icon"><img src="assets/photos/calendar.svg" alt="Calendar Icon" /></span>
-                <span class="meta-bubble">Jan 2026</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-icon"><img src="assets/photos/tool.svg" alt="Tool Icon" /></span>
-                <span class="meta-bubble">Python</span>
-              </div>
-            </div>
-          </div>
-          <p class="project-description">Two different models will be painted. Firstly, an orange Porsche GT3 RS will be
-            repainted. In addition to changing the color to blue, the spoiler will be removed and some details will be
-            changed or added with J-B Weld WaterWeld. The metal body has been sanded and primed, and an airbrush with
-            enamel or laquer will be utilized for even metallic coating. The other model, a 911 Carrera 3.2 targa is a
-            plastic body which does not need to be sanded but does need to be glued to be put together. It will mainly
-            be painted metallic red.</p>
-          <div class="divider-h"></div>
-          <div class="project-collage">
-            <img src="assets/photos/temp.png" alt="Showcase 1" />
-            <img src="assets/photos/temp.png" alt="Showcase 2" />
-            <img src="assets/photos/temp.png" alt="Showcase 3" />
-            <img src="assets/photos/temp.png" alt="Showcase 4" />
-            <img src="assets/photos/temp.png" alt="Showcase 5" />
-            <img src="assets/photos/temp.png" alt="Showcase 6" />
-          </div>
-        </div>
-
-        <div class="project-panel">
-          <div class="project-header">
-            <div class="header-main">
-              <span class="project-status status-working"></span>
-              <a href="projectE.html" class="project-link">
-                <h2 class="project-title">5 | Raspberry Pi 5 Server + Minecraft Server<span class="title-arrow"><img
-                      src="assets/photos/arrow.svg" alt="Arrow" /><img src="assets/photos/arrow.svg"
-                      alt="Arrow" /></span></h2>
-              </a>
-            </div>
-            <div class="divider-v"></div>
-            <div class="project-meta-info">
-              <div class="meta-item">
-                <span class="meta-icon">$</span>
-                <span class="meta-bubble">250 USD</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-icon"><img src="assets/photos/calendar.svg" alt="Calendar Icon" /></span>
-                <span class="meta-bubble">July 2026</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-icon"><img src="assets/photos/tool.svg" alt="Tool Icon" /></span>
-                <span class="meta-bubble">Raspberry Pi 5 | Docker</span>
-              </div>
-            </div>
-          </div>
-          <p class="project-description">Setting up a Raspberry Pi 5 as a headless server to host a lightweight
-            Minecraft server instance. Goals include containerized deployment, automated backups to external storage,
-            and remote monitoring.</p>
-          <div class="divider-h"></div>
-          <div class="project-collage">
-            <img src="assets/photos/temp.png" alt="Showcase 1" />
-            <img src="assets/photos/temp.png" alt="Showcase 2" />
-          </div>
+        <h2 class="skills-header">Programming</h2>
+        <div class="skills-grid">
+          <span class="skill">Lua</span>
+          <span class="skill">Java</span>
+          <span class="skill">C++</span>
+          <span class="skill">Python</span>
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
         </div>
       </div>
 
-      <div class="project-icons">
-        <div class="icon-list"></div>
+      <div class="bio fade-in">
+        <p>I am an engineering student at <a href="https://tjhsst.fcps.edu"
+            class="inline-link">TJHSST</a> developing the hardware and software
+          for multiple personal <a href="projects/"
+            class="inline-link">projects.</a> Currently, I am expanding my
+          knowledge in both <a href="https://python.org"
+            class="inline-link">Python</a> and welding,
+          with plans to study <a href="riscv.org"
+            class="inline-link">assembly</a> and
+          computational hardware design in the future. Beyond engineering, I
+          enjoy automotive and scenic <a href="photography"
+            class="inline-link">photography,</a> as
+          well as horology.</p>
       </div>
-    </section>
-  </main>
+    </header>
 
-  <nav class="action-dock" id="actionDock">
-    <button class="dock-trigger" id="dockTrigger">
-      <span class="trigger-dot"></span>
-    </button>
-    <div class="dock-menu">
-      <a href="index.html" class="dock-item">Home</a>
-      <a href="projects.html" class="dock-item">Projects</a>
-      <button class="dock-item settings" id="settings-btn">Settings</button>
-      <a href="cms.html" class="dock-item">CMS</a>
-      <a href="copyright.html" class="dock-item font-special">©</a>
-    </div>
-  </nav>
-
-  <div class="settings-menu" id="settings-popup">
-    <div class="popup">
-      <h2>Settings</h2>
-      <div>
-        <h3>Personalization</h3>
-        <p>Theme</p>
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
+    <div class="fade-in"><h1 class="title center">Favorite Projects:</h1></div>
+    <div class="project-menu fade-in">
+      <div class="project">
+        <div class="project-header">
+          <div class="title-status-group">
+            <span class="project-status status-working"></span>
+            <h2 class="project-title">PiCam</h2>
+          </div>
+          <span class="header-bubble">Jan 2026</span>
+        </div>
+        <p class="project-desc">Digital camera utilizing the RPi 4B, with a
+          Raspberry Pi HQ Camera module. Based on the 1972 Canon Canonet G-III
+          QL17 and Canon EOS series, primarily the 2000's EOS-1V.</p>
+        <div class="card-footer">
+          <div class="tag-group">
+            <span class="tag">Fusion 360</span>
+            <span class="tag">FDM Printing</span>
+            <span class="tag">Python</span>
+          </div>
+          <span class="price-tag header-bubble">$ 200</span>
+          <a href="projects/projectA/" class="view-link">View Details &rarr;</a>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project-header">
+          <div class="title-status-group">
+            <span class="project-status status-not-started"></span>
+            <h2 class="project-title">G920 Pedals</h2>
+          </div>
+          <span class="header-bubble">N/A</span>
+        </div>
+        <p class="project-desc">Inverted pedals designed for the three pedals
+          from the Logitech G920. While the main body will be made of aromatic
+          wood, the footrest will be from two pieces of diamond-plate steel
+          welded together.</p>
+        <div class="card-footer">
+          <div class="tag-group">
+            <span class="tag">Welding</span>
+            <span class="tag">Soldering</span>
+            <span class="tag">Machining</span>
+          </div>
+          <span class="price-tag header-bubble">$ 180</span>
+          <a href="projects/projectB/" class="view-link">View Details &rarr;</a>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project-header">
+          <div class="title-status-group">
+            <span class="project-status status-working"></span>
+            <h2 class="project-title">Sim Cluster</h2>
+          </div>
+          <span class="header-bubble">Dec 2028</span>
+        </div>
+        <p class="project-desc">Hybrid analog-digital gauge cluster designed to
+          mount onto the G920 wheel. An Arduino Uno R4 and ESP32-S3 will power
+          an analog odometer, LCD, and guages for visualization of telemetry
+          data.</p>
+        <div class="project-footer">
+          <div class="tag-group">
+            <span class="tag">Fusion 360</span>
+            <span class="tag">FDM Printing</span>
+            <span class="tag">Wrapping</span>
+          </div>
+          <span class="price-tag header-bubble">$ 150</span>
+          <a href="projects/projectC/" class="view-link">View Details &rarr;</a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script src="script.js"></script>
-  <script src="cms-config.js"></script>
-  <script src="cms.js"></script>
-</body>
+    <nav class="dock" id="dock">
+      <button class="dock-btn" id="dock-btn">
+        <span class="dot"></span>
+      </button>
+      <div class="dock-menu">
+        <a href="../" class="dock-item">Home</a>
+        <a href="projects/" class="dock-item">Projects</a>
+        <a href="photography/" class="dock-item">Photos</a>
+        <a href="misc/copyright/" class="dock-item copyright">©</a>
+      </div>
+    </nav>
+
+    <script src="home.js"></script>
+  </body>
 
 </html>
