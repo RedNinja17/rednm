@@ -1,0 +1,156 @@
+@font-face {
+    font-family: 'Array-Wide';
+    src: url('../fonts/Array-Wide.woff2') format('woff2'),
+        url('../fonts/Array-Wide.woff') format('woff'),
+        url('../fonts/Array-Wide.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Array-Regular';
+    src: url('../fonts/Array-Regular.woff2') format('woff2'),
+        url('../fonts/Array-Regular.woff') format('woff'),
+        url('../fonts/Array-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Array-Semibold';
+    src: url('../fonts/Array-Semibold.woff2') format('woff2'),
+        url('../fonts/Array-Semibold.woff') format('woff'),
+        url('../fonts/Array-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Array-SemiboldWide';
+    src: url('../fonts/Array-SemiboldWide.woff2') format('woff2'),
+        url('../fonts/Array-SemiboldWide.woff') format('woff'),
+        url('../fonts/Array-SemiboldWide.ttf') format('truetype');
+    font-weight: 600;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Array-BoldWide';
+    src: url('../fonts/Array-BoldWide.woff2') format('woff2'),
+        url('../fonts/Array-BoldWide.woff') format('woff'),
+        url('../fonts/Array-BoldWide.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Array-Bold';
+    src: url('../fonts/Array-Bold.woff2') format('woff2'),
+        url('../fonts/Array-Bold.woff') format('woff'),
+        url('../fonts/Array-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+
+:root {
+    background: radial-gradient(ellipse at bottom right, #400202 0%, #050000 50%, #000000 100%) fixed;
+    color: #fff;
+    --text-muted: #b0b0b0;
+    --accent-red: #ff5c5c;
+    --accent-red-dark: rgba(255, 92, 92, 0.6);
+}
+
+h1 {
+    font-family: 'Array-Regular', monospace;
+}
+
+.hero {
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 1.5rem;
+    gap: 1rem;
+    font-family: 'Array-Regular', monospace;
+    font-weight: 1;
+}
+
+.hero-title {
+    font-size: clamp(4rem, 12vw, 10rem);
+    margin: 0;
+    line-height: 1.1;
+    text-shadow:
+        0 0 5px #ff3c3c,
+        0 0 10px rgba(255, 60, 60, 0.7),
+        0 0 30px rgba(255, 30, 30, 0.45),
+        0 0 60px rgba(255, 0, 0, 0.2);
+    font-weight: 50;
+}
+
+.hero-label {
+    margin: 0;
+    color: var(--text-muted);
+}
+
+.hero-description {
+    max-width: 600px;
+    margin: 0;
+    color: var(--text-muted);
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.line-container {
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    box-sizing: border-box;
+}
+
+
+.full-line {
+    width: 100%;
+    height: 2px;
+    border: none;
+    margin: 0;
+
+    background: linear-gradient(90deg,
+            transparent,
+            var(--accent-red) 20%,
+            #ffaaaa 50%,
+            var(--accent-red) 80%,
+            transparent);
+
+    position: relative;
+    isolation: isolate;
+}
+
+.full-line::before {
+    content: "";
+    position: absolute;
+    inset: -1px 0;
+    z-index: -1;
+
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 60, 60, 0.7) 20%,
+            rgba(255, 170, 170, 0.8) 50%,
+            rgba(255, 60, 60, 0.7) 80%,
+            transparent);
+
+    filter: blur(1px);
+}
